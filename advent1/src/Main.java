@@ -10,12 +10,10 @@ public class Main {
         BufferedReader br = new BufferedReader(
                 new FileReader("/Users/oumaimaDehdi/dev/repos/adventOfCode/advent1/input/elf-calories.txt"));
 
-        int elf=0;
         List<Integer> listOfCalories = new ArrayList<>();
 
         String line = br.readLine();
         while (line != null) {
-            elf++;
             int calories=0;
             while(line != null && !line.isBlank())
             {
