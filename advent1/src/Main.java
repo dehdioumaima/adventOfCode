@@ -1,15 +1,17 @@
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
 
 public class Main {
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(
                 new FileReader("/Users/oumaimaDehdi/dev/repos/adventOfCode/advent1/input/elf-calories.txt"));
 
-        int elfwithmax=0;
-        int maxcalories=0;
         int elf=0;
+        List<Integer> listOfCalories = new ArrayList<>();
 
         String line = br.readLine();
         while (line != null) {
@@ -24,15 +26,12 @@ public class Main {
             {
                 break;
             }
-            if(calories>maxcalories)
-            {
-                maxcalories=calories;
-                elfwithmax=elf;
-            }
+            listOfCalories.add(calories);
             line = br.readLine();
         }
-
-        System.out.println("the max of calories is "+maxcalories+" carried by the Elf "+elfwithmax);
+        Collections.sort(listOfCalories);
+        int size = listOfCalories.size();
+        System.out.println("the max of calories is "+listOfCalories.get(size-1));
         br.close();
     }
 }
