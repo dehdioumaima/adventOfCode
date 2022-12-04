@@ -2,6 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/advent1/advent1.iml" filepath="$PROJECT_DIR$/advent1/advent1.iml" />
+      <module fileurl="file://$PROJECT_DIR$/advent2/advent2.iml" filepath="$PROJECT_DIR$/advent2/advent2.iml" />
       <module fileurl="file://$PROJECT_DIR$/adventOfCode.iml" filepath="$PROJECT_DIR$/adventOfCode.iml" />
     </modules>
   </component>
