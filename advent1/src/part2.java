@@ -5,18 +5,15 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-public class Main {
+public class part2 {
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(
                 new FileReader("/Users/oumaimaDehdi/dev/repos/adventOfCode/advent1/input/elf-calories.txt"));
 
-        int elfwithmax=0;
-        int maxcalories=0;
-        int elf=0;
+        List<Integer> listOfCalories = new ArrayList<>();
 
         String line = br.readLine();
         while (line != null) {
-            elf++;
             int calories=0;
             while(line != null && !line.isBlank())
             {
@@ -27,15 +24,13 @@ public class Main {
             {
                 break;
             }
-            if(calories>maxcalories)
-            {
-                maxcalories=calories;
-                elfwithmax=elf;
-            }
+            listOfCalories.add(calories);
             line = br.readLine();
         }
-
-        System.out.println("the max of calories is "+maxcalories+" carried by the Elf "+elfwithmax);
+        Collections.sort(listOfCalories);
+        int size = listOfCalories.size();
+        int sum = listOfCalories.get(size-1) + listOfCalories.get(size-2) + listOfCalories.get(size-3);
+        System.out.println("the sum of 3 max calories is "+sum);
         br.close();
     }
 }
