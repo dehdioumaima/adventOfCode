@@ -29,7 +29,9 @@ public class Main {
         }
         Collections.sort(listOfCalories);
         int size = listOfCalories.size();
+        int sum = listOfCalories.get(size-1) + listOfCalories.get(size-2) + listOfCalories.get(size-3);
         System.out.println("the max of calories is "+listOfCalories.get(size-1));
+        System.out.println("the sum of 3 max calories is "+sum);
         br.close();
     }
 }
